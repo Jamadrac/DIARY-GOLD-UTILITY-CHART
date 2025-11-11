@@ -1,0 +1,342 @@
+[
+  {
+    "id": 1,
+    "name": "Industrial Chiller 1",
+    "type": "chiller",
+    "location": "Building A",
+    "serialNumber": "CH-2023-001",
+    "status": "operational",
+    "lastService": "2024-10-15",
+    "nextService": "2024-11-15",
+    "parameterDefinitions": [
+      { "name": "Temperature", "type": "temperature", "unit": "°C", "required": true, "description": "Operating temperature" },
+      { "name": "Pressure", "type": "pressure", "unit": "bar", "required": true, "description": "System pressure" },
+      { "name": "Flow Rate", "type": "number", "unit": "L/min", "required": true, "description": "Water flow rate" },
+      { "name": "Power Consumption", "type": "number", "unit": "kW", "required": true, "description": "Electrical power draw" },
+      { "name": "Refrigerant Level", "type": "percentage", "unit": "%", "required": true, "description": "Refrigerant charge level" },
+      { "name": "Fan Speed", "type": "number", "unit": "RPM", "required": true, "description": "Cooling fan speed" },
+      { "name": "Condenser Temp", "type": "temperature", "unit": "°C", "required": true, "description": "Condenser temperature" },
+      { "name": "Evaporator Temp", "type": "temperature", "unit": "°C", "required": true, "description": "Evaporator temperature" },
+      { "name": "Compressor Current", "type": "current", "unit": "A", "required": true, "description": "Compressor motor current" },
+      { "name": "Oil Pressure", "type": "pressure", "unit": "bar", "required": true, "description": "Compressor oil pressure" },
+      { "name": "Filter Pressure Drop", "type": "pressure", "unit": "bar", "required": true, "description": "Filter differential pressure" },
+      { "name": "Water Flow", "type": "number", "unit": "L/min", "required": true, "description": "Cooling water flow" },
+      { "name": "Water Inlet Temp", "type": "temperature", "unit": "°C", "required": true, "description": "Inlet water temperature" },
+      { "name": "Water Outlet Temp", "type": "temperature", "unit": "°C", "required": true, "description": "Outlet water temperature" },
+      { "name": "Vibration Level", "type": "number", "unit": "mm/s", "required": true, "description": "Machine vibration level" },
+      { "name": "Noise Level", "type": "number", "unit": "dB", "required": true, "description": "Noise measurement" },
+      { "name": "Humidity Sensor", "type": "percentage", "unit": "%", "required": true, "description": "Relative humidity" },
+      { "name": "Control Voltage", "type": "text", "unit": "", "required": true, "description": "Control system voltage" },
+      { "name": "Network Status", "type": "dropdown", "options": ["Connected", "Disconnected", "Error"], "required": true, "description": "Network connectivity" },
+      { "name": "Alarm Status", "type": "dropdown", "options": ["No Alarms", "Warning", "Alarm"], "required": true, "description": "System alarm status" },
+      { "name": "Runtime Hours", "type": "text", "unit": "hrs", "required": true, "description": "Total operating hours" }
+    ],
+    "parameters": [
+      {
+        "name": "Temperature",
+        "value": "18°C",
+        "status": "normal"
+      },
+      {
+        "name": "Pressure",
+        "value": "4.2 bar",
+        "status": "normal"
+      },
+      {
+        "name": "Flow Rate",
+        "value": "250 L/min",
+        "status": "normal"
+      },
+      {
+        "name": "Power Consumption",
+        "value": "15.2 kW",
+        "status": "normal"
+      },
+      {
+        "name": "Refrigerant Level",
+        "value": "85%",
+        "status": "normal"
+      },
+      {
+        "name": "Fan Speed",
+        "value": "1200 RPM",
+        "status": "normal"
+      },
+      {
+        "name": "Condenser Temp",
+        "value": "35°C",
+        "status": "normal"
+      },
+      {
+        "name": "Evaporator Temp",
+        "value": "5°C",
+        "status": "normal"
+      },
+      {
+        "name": "Compressor Current",
+        "value": "12.5 A",
+        "status": "normal"
+      },
+      {
+        "name": "Oil Pressure",
+        "value": "2.8 bar",
+        "status": "normal"
+      },
+      {
+        "name": "Filter Pressure Drop",
+        "value": "0.3 bar",
+        "status": "normal"
+      },
+      {
+        "name": "Water Flow",
+        "value": "180 L/min",
+        "status": "normal"
+      },
+      {
+        "name": "Water Inlet Temp",
+        "value": "22°C",
+        "status": "normal"
+      },
+      {
+        "name": "Water Outlet Temp",
+        "value": "15°C",
+        "status": "normal"
+      },
+      {
+        "name": "Vibration Level",
+        "value": "2.1 mm/s",
+        "status": "normal"
+      },
+      {
+        "name": "Noise Level",
+        "value": "68 dB",
+        "status": "normal"
+      },
+      {
+        "name": "Humidity Sensor",
+        "value": "45%",
+        "status": "normal"
+      },
+      {
+        "name": "Control Voltage",
+        "value": "24V DC",
+        "status": "normal"
+      },
+      {
+        "name": "Network Status",
+        "value": "Connected",
+        "status": "normal"
+      },
+      {
+        "name": "Alarm Status",
+        "value": "No Alarms",
+        "status": "normal"
+      },
+      {
+        "name": "Runtime Hours",
+        "value": "8423 hrs",
+        "status": "normal"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Air Compressor A",
+    "type": "compressor",
+    "location": "Workshop",
+    "serialNumber": "AC-2023-045",
+    "status": "maintenance_required",
+    "lastService": "2024-09-20",
+    "nextService": "2024-11-01",
+    "parameterDefinitions": [
+      { "name": "Oil Level", "type": "dropdown", "options": ["Full", "Good", "Low", "Critical", "Empty"], "required": true, "description": "Compressor oil level" },
+      { "name": "Current", "type": "current", "unit": "A", "required": true, "description": "Motor current consumption" },
+      { "name": "Filter Condition", "type": "dropdown", "options": ["Clean", "Dirty", "Replace Soon", "Clogged"], "required": true, "description": "Air filter condition" },
+      { "name": "Pressure", "type": "pressure", "unit": "bar", "required": true, "description": "System pressure" },
+      { "name": "Temperature", "type": "temperature", "unit": "°C", "required": true, "description": "Operating temperature" },
+      { "name": "Vibration", "type": "number", "unit": "mm/s", "required": true, "description": "Vibration measurement" }
+    ],
+    "parameters": [
+      {
+        "name": "Oil Level",
+        "value": "Low",
+        "status": "warning"
+      },
+      {
+        "name": "Current",
+        "value": "8.5 A",
+        "status": "normal"
+      },
+      {
+        "name": "Filter Condition",
+        "value": "Replace Soon",
+        "status": "warning"
+      },
+      {
+        "name": "Pressure",
+        "value": "8.2 bar",
+        "status": "normal"
+      },
+      {
+        "name": "Temperature",
+        "value": "75°C",
+        "status": "normal"
+      },
+      {
+        "name": "Vibration",
+        "value": "3.2 mm/s",
+        "status": "warning"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "HVAC Unit B",
+    "type": "hvac",
+    "location": "Office Floor 2",
+    "serialNumber": "HV-2023-112",
+    "status": "operational",
+    "lastService": "2024-10-28",
+    "nextService": "2024-12-15",
+    "parameterDefinitions": [
+      { "name": "Air Flow Rate", "type": "number", "unit": "CFM", "required": true, "description": "Air flow measurement" },
+      { "name": "Filter Status", "type": "dropdown", "options": ["Clean", "Dirty", "Replace", "Clogged"], "required": true, "description": "Air filter condition" },
+      { "name": "Coil Temperature", "type": "temperature", "unit": "°C", "required": true, "description": "Evaporator coil temperature" },
+      { "name": "Fan Motor Current", "type": "current", "unit": "A", "required": true, "description": "Fan motor current" },
+      { "name": "Humidity", "type": "percentage", "unit": "%", "required": true, "description": "Relative humidity" },
+      { "name": "Room Temperature", "type": "temperature", "unit": "°C", "required": true, "description": "Room temperature reading" }
+    ],
+    "parameters": [
+      {
+        "name": "Air Flow Rate",
+        "value": "1200 CFM",
+        "status": "normal"
+      },
+      {
+        "name": "Filter Status",
+        "value": "Clean",
+        "status": "normal"
+      },
+      {
+        "name": "Coil Temperature",
+        "value": "8°C",
+        "status": "normal"
+      },
+      {
+        "name": "Fan Motor Current",
+        "value": "2.1 A",
+        "status": "normal"
+      },
+      {
+        "name": "Humidity",
+        "value": "42%",
+        "status": "normal"
+      },
+      {
+        "name": "Room Temperature",
+        "value": "22°C",
+        "status": "normal"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Boiler System C",
+    "type": "boiler",
+    "location": "Basement",
+    "serialNumber": "BL-2023-078",
+    "status": "operational",
+    "lastService": "2024-10-10",
+    "nextService": "2024-11-30",
+    "parameterDefinitions": [
+      { "name": "Water Temperature", "type": "temperature", "unit": "°C", "required": true, "description": "Boiler water temperature" },
+      { "name": "Pressure", "type": "pressure", "unit": "bar", "required": true, "description": "System pressure reading" },
+      { "name": "Gas Flow", "type": "number", "unit": "m³/h", "required": true, "description": "Gas consumption rate" },
+      { "name": "Flue Gas Temp", "type": "temperature", "unit": "°C", "required": true, "description": "Flue gas temperature" },
+      { "name": "CO₂ Level", "type": "percentage", "unit": "%", "required": true, "description": "Carbon dioxide percentage" },
+      { "name": "Water Flow", "type": "number", "unit": "L/min", "required": true, "description": "Water circulation rate" }
+    ],
+    "parameters": [
+      {
+        "name": "Water Temperature",
+        "value": "85°C",
+        "status": "normal"
+      },
+      {
+        "name": "Pressure",
+        "value": "2.1 bar",
+        "status": "normal"
+      },
+      {
+        "name": "Gas Flow",
+        "value": "1.2 m³/h",
+        "status": "normal"
+      },
+      {
+        "name": "Flue Gas Temp",
+        "value": "180°C",
+        "status": "normal"
+      },
+      {
+        "name": "CO₂ Level",
+        "value": "8.5%",
+        "status": "normal"
+      },
+      {
+        "name": "Water Flow",
+        "value": "450 L/min",
+        "status": "normal"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Pump Station D",
+    "type": "pump",
+    "location": "Water Treatment",
+    "serialNumber": "PS-2023-156",
+    "status": "operational",
+    "lastService": "2024-09-15",
+    "nextService": "2024-12-01",
+    "parameterDefinitions": [
+      { "name": "Flow Rate", "type": "number", "unit": "L/min", "required": true, "description": "Pump flow rate" },
+      { "name": "Pressure", "type": "pressure", "unit": "bar", "required": true, "description": "System pressure" },
+      { "name": "Motor Current", "type": "current", "unit": "A", "required": true, "description": "Motor current draw" },
+      { "name": "Bearing Temp", "type": "temperature", "unit": "°C", "required": true, "description": "Bearing temperature" },
+      { "name": "Seal Condition", "type": "dropdown", "options": ["Good", "Fair", "Leaking", "Replace"], "required": true, "description": "Mechanical seal condition" },
+      { "name": "Vibration", "type": "number", "unit": "mm/s", "required": true, "description": "Vibration measurement" }
+    ],
+    "parameters": [
+      {
+        "name": "Flow Rate",
+        "value": "850 L/min",
+        "status": "normal"
+      },
+      {
+        "name": "Pressure",
+        "value": "4.5 bar",
+        "status": "normal"
+      },
+      {
+        "name": "Motor Current",
+        "value": "15.2 A",
+        "status": "normal"
+      },
+      {
+        "name": "Bearing Temp",
+        "value": "45°C",
+        "status": "normal"
+      },
+      {
+        "name": "Seal Condition",
+        "value": "Good",
+        "status": "normal"
+      },
+      {
+        "name": "Vibration",
+        "value": "1.8 mm/s",
+        "status": "normal"
+      }
+    ]
+  }
+]

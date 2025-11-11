@@ -1,0 +1,796 @@
+[
+  {
+    "id": 1,
+    "equipmentId": 1,
+    "equipmentName": "Industrial Chiller 1",
+    "serviceType": "weekly",
+    "date": "2024-11-09",
+    "technician": "John Smith",
+    "readings": {
+      "Temperature": "18.2°C",
+      "Pressure": "4.3 bar",
+      "Flow Rate": "248 L/min",
+      "Power Consumption": "15.1 kW",
+      "Refrigerant Level": "84%",
+      "Fan Speed": "1195 RPM",
+      "Condenser Temp": "34°C",
+      "Evaporator Temp": "4°C",
+      "Compressor Current": "12.4 A",
+      "Oil Pressure": "2.7 bar",
+      "Filter Pressure Drop": "0.3 bar",
+      "Water Flow": "178 L/min",
+      "Water Inlet Temp": "21°C",
+      "Water Outlet Temp": "14°C",
+      "Vibration Level": "2.0 mm/s",
+      "Noise Level": "67 dB",
+      "Humidity Sensor": "44%",
+      "Control Voltage": "24V DC",
+      "Network Status": "Connected",
+      "Alarm Status": "No Alarms",
+      "Runtime Hours": "8445 hrs"
+    },
+    "notes": "All systems operating within normal parameters",
+    "workPerformed": "",
+    "duration": "45 minutes"
+  },
+  {
+    "id": 2,
+    "equipmentId": 1,
+    "equipmentName": "Industrial Chiller 1",
+    "serviceType": "maintenance",
+    "date": "2024-11-05",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Temperature": "18.5°C",
+      "Pressure": "4.1 bar",
+      "Flow Rate": "245 L/min",
+      "Power Consumption": "14.8 kW",
+      "Refrigerant Level": "88%",
+      "Fan Speed": "1210 RPM",
+      "Oil Pressure": "2.9 bar",
+      "Runtime Hours": "8421 hrs"
+    },
+    "notes": "Replaced worn components, topped up refrigerant",
+    "workPerformed": "Replaced blower fan blades, cleaned coils, topped up refrigerant, calibrated sensors",
+    "duration": "2.5 hours"
+  },
+  {
+    "id": 3,
+    "equipmentId": 1,
+    "equipmentName": "Industrial Chiller 1",
+    "serviceType": "weekly",
+    "date": "2024-11-02",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Temperature": "18.0°C",
+      "Pressure": "4.2 bar",
+      "Flow Rate": "251 L/min",
+      "Power Consumption": "15.3 kW",
+      "Refrigerant Level": "82%",
+      "Fan Speed": "1188 RPM",
+      "Runtime Hours": "8398 hrs"
+    },
+    "notes": "Normal operation, slight refrigerant loss noted",
+    "workPerformed": "",
+    "duration": "30 minutes"
+  },
+  {
+    "id": 4,
+    "equipmentId": 1,
+    "equipmentName": "Industrial Chiller 1",
+    "serviceType": "weekly",
+    "date": "2024-10-26",
+    "technician": "John Smith",
+    "readings": {
+      "Temperature": "17.8°C",
+      "Pressure": "4.4 bar",
+      "Flow Rate": "252 L/min",
+      "Power Consumption": "15.0 kW",
+      "Refrigerant Level": "86%",
+      "Runtime Hours": "8375 hrs"
+    },
+    "notes": "Excellent performance, all readings normal",
+    "workPerformed": "",
+    "duration": "40 minutes"
+  },
+  {
+    "id": 5,
+    "equipmentId": 1,
+    "equipmentName": "Industrial Chiller 1",
+    "serviceType": "weekly",
+    "date": "2024-10-19",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Temperature": "18.3°C",
+      "Pressure": "4.1 bar",
+      "Flow Rate": "249 L/min",
+      "Power Consumption": "15.4 kW",
+      "Refrigerant Level": "85%",
+      "Runtime Hours": "8352 hrs"
+    },
+    "notes": "Minor vibration detected, monitoring",
+    "workPerformed": "",
+    "duration": "50 minutes"
+  },
+  {
+    "id": 6,
+    "equipmentId": 1,
+    "equipmentName": "Industrial Chiller 1",
+    "serviceType": "maintenance",
+    "date": "2024-10-15",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Temperature": "18.1°C",
+      "Pressure": "4.3 bar",
+      "Flow Rate": "250 L/min",
+      "Power Consumption": "14.9 kW",
+      "Refrigerant Level": "90%",
+      "Runtime Hours": "8329 hrs"
+    },
+    "notes": "Scheduled maintenance completed successfully",
+    "workPerformed": "Oil change, filter replacement, belt inspection, electrical connections check",
+    "duration": "3 hours"
+  },
+  {
+    "id": 7,
+    "equipmentId": 1,
+    "equipmentName": "Industrial Chiller 1",
+    "serviceType": "weekly",
+    "date": "2024-10-12",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Temperature": "18.0°C",
+      "Pressure": "4.2 bar",
+      "Flow Rate": "247 L/min",
+      "Power Consumption": "15.2 kW",
+      "Runtime Hours": "8306 hrs"
+    },
+    "notes": "Pre-maintenance inspection",
+    "workPerformed": "",
+    "duration": "35 minutes"
+  },
+  {
+    "id": 8,
+    "equipmentId": 1,
+    "equipmentName": "Industrial Chiller 1",
+    "serviceType": "weekly",
+    "date": "2024-10-05",
+    "technician": "John Smith",
+    "readings": {
+      "Temperature": "17.9°C",
+      "Pressure": "4.3 bar",
+      "Flow Rate": "253 L/min",
+      "Power Consumption": "15.1 kW",
+      "Runtime Hours": "8283 hrs"
+    },
+    "notes": "Stable operation, excellent efficiency",
+    "workPerformed": "",
+    "duration": "42 minutes"
+  },
+  {
+    "id": 9,
+    "equipmentId": 1,
+    "equipmentName": "Industrial Chiller 1",
+    "serviceType": "weekly",
+    "date": "2024-09-28",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Temperature": "18.4°C",
+      "Pressure": "4.0 bar",
+      "Flow Rate": "246 L/min",
+      "Power Consumption": "15.5 kW",
+      "Runtime Hours": "8260 hrs"
+    },
+    "notes": "Minor temperature fluctuation observed",
+    "workPerformed": "",
+    "duration": "55 minutes"
+  },
+  {
+    "id": 10,
+    "equipmentId": 2,
+    "equipmentName": "Air Compressor A",
+    "serviceType": "weekly",
+    "date": "2024-11-08",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Oil Level": "76%",
+      "Current": "8.4 A",
+      "Filter Condition": "Good",
+      "Pressure": "8.1 bar",
+      "Temperature": "74°C",
+      "Vibration": "3.1 mm/s"
+    },
+    "notes": "Oil level dropping faster than expected",
+    "workPerformed": "",
+    "duration": "25 minutes"
+  },
+  {
+    "id": 11,
+    "equipmentId": 2,
+    "equipmentName": "Air Compressor A",
+    "serviceType": "maintenance",
+    "date": "2024-11-02",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Oil Level": "95%",
+      "Current": "8.2 A",
+      "Filter Condition": "Replaced",
+      "Pressure": "8.3 bar",
+      "Temperature": "71°C",
+      "Vibration": "2.8 mm/s"
+    },
+    "notes": "Routine maintenance completed",
+    "workPerformed": "Changed compressor oil, replaced air filter, checked belt tension, cleaned intake",
+    "duration": "1.5 hours"
+  },
+  {
+    "id": 12,
+    "equipmentId": 2,
+    "equipmentName": "Air Compressor A",
+    "serviceType": "weekly",
+    "date": "2024-10-25",
+    "technician": "John Smith",
+    "readings": {
+      "Oil Level": "82%",
+      "Current": "8.6 A",
+      "Filter Condition": "Moderate",
+      "Pressure": "8.0 bar",
+      "Temperature": "76°C",
+      "Vibration": "3.3 mm/s"
+    },
+    "notes": "Filter needs replacement soon",
+    "workPerformed": "",
+    "duration": "30 minutes"
+  },
+  {
+    "id": 13,
+    "equipmentId": 2,
+    "equipmentName": "Air Compressor A",
+    "serviceType": "weekly",
+    "date": "2024-10-18",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Oil Level": "78%",
+      "Current": "8.5 A",
+      "Filter Condition": "Fair",
+      "Pressure": "8.2 bar",
+      "Temperature": "75°C",
+      "Vibration": "3.2 mm/s"
+    },
+    "notes": "Normal wear patterns observed",
+    "workPerformed": "",
+    "duration": "28 minutes"
+  },
+  {
+    "id": 14,
+    "equipmentId": 2,
+    "equipmentName": "Air Compressor A",
+    "serviceType": "weekly",
+    "date": "2024-10-11",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Oil Level": "84%",
+      "Current": "8.3 A",
+      "Filter Condition": "Good",
+      "Pressure": "8.4 bar",
+      "Temperature": "72°C",
+      "Vibration": "2.9 mm/s"
+    },
+    "notes": "Performance within specifications",
+    "workPerformed": "",
+    "duration": "26 minutes"
+  },
+  {
+    "id": 15,
+    "equipmentId": 2,
+    "equipmentName": "Air Compressor A",
+    "serviceType": "breakdown",
+    "date": "2024-10-04",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Oil Level": "68%",
+      "Current": "9.2 A",
+      "Filter Condition": "Clogged",
+      "Pressure": "7.5 bar",
+      "Temperature": "82°C",
+      "Vibration": "4.1 mm/s"
+    },
+    "notes": "Emergency repair - overheating due to clogged filter",
+    "workPerformed": "Emergency filter replacement, oil top-up, cooling system check, belt adjustment",
+    "duration": "2 hours"
+  },
+  {
+    "id": 16,
+    "equipmentId": 2,
+    "equipmentName": "Air Compressor A",
+    "serviceType": "weekly",
+    "date": "2024-09-27",
+    "technician": "John Smith",
+    "readings": {
+      "Oil Level": "88%",
+      "Current": "8.1 A",
+      "Filter Condition": "Good",
+      "Pressure": "8.3 bar",
+      "Temperature": "73°C",
+      "Vibration": "2.7 mm/s"
+    },
+    "notes": "Excellent condition before breakdown",
+    "workPerformed": "",
+    "duration": "24 minutes"
+  },
+  {
+    "id": 17,
+    "equipmentId": 2,
+    "equipmentName": "Air Compressor A",
+    "serviceType": "maintenance",
+    "date": "2024-09-20",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Oil Level": "92%",
+      "Current": "8.0 A",
+      "Filter Condition": "New",
+      "Pressure": "8.4 bar",
+      "Temperature": "70°C",
+      "Vibration": "2.5 mm/s"
+    },
+    "notes": "Quarterly maintenance completed",
+    "workPerformed": "Full service: oil change, filter replacement, belt inspection, valve adjustment",
+    "duration": "2.5 hours"
+  },
+  {
+    "id": 18,
+    "equipmentId": 3,
+    "equipmentName": "HVAC Unit B",
+    "serviceType": "weekly",
+    "date": "2024-11-07",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Air Flow Rate": "1195 CFM",
+      "Filter Status": "Clean",
+      "Coil Temperature": "7°C",
+      "Fan Motor Current": "2.0 A",
+      "Humidity": "41%",
+      "Room Temperature": "21°C"
+    },
+    "notes": "Optimal performance maintained",
+    "workPerformed": "",
+    "duration": "20 minutes"
+  },
+  {
+    "id": 19,
+    "equipmentId": 3,
+    "equipmentName": "HVAC Unit B",
+    "serviceType": "maintenance",
+    "date": "2024-10-28",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Air Flow Rate": "1210 CFM",
+      "Filter Status": "Replaced",
+      "Coil Temperature": "8°C",
+      "Fan Motor Current": "2.1 A",
+      "Humidity": "43%",
+      "Room Temperature": "22°C"
+    },
+    "notes": "Filter replacement and coil cleaning",
+    "workPerformed": "Filter replacement, coil cleaning, ductwork inspection, thermostat calibration",
+    "duration": "1 hour"
+  },
+  {
+    "id": 20,
+    "equipmentId": 3,
+    "equipmentName": "HVAC Unit B",
+    "serviceType": "weekly",
+    "date": "2024-10-21",
+    "technician": "John Smith",
+    "readings": {
+      "Air Flow Rate": "1188 CFM",
+      "Filter Status": "Moderate",
+      "Coil Temperature": "8°C",
+      "Fan Motor Current": "2.2 A",
+      "Humidity": "44%",
+      "Room Temperature": "22°C"
+    },
+    "notes": "Filter showing dust accumulation",
+    "workPerformed": "",
+    "duration": "18 minutes"
+  },
+  {
+    "id": 21,
+    "equipmentId": 3,
+    "equipmentName": "HVAC Unit B",
+    "serviceType": "weekly",
+    "date": "2024-10-14",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Air Flow Rate": "1202 CFM",
+      "Filter Status": "Good",
+      "Coil Temperature": "7°C",
+      "Fan Motor Current": "2.0 A",
+      "Humidity": "42%",
+      "Room Temperature": "21°C"
+    },
+    "notes": "System running efficiently",
+    "workPerformed": "",
+    "duration": "22 minutes"
+  },
+  {
+    "id": 22,
+    "equipmentId": 3,
+    "equipmentName": "HVAC Unit B",
+    "serviceType": "weekly",
+    "date": "2024-10-07",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Air Flow Rate": "1198 CFM",
+      "Filter Status": "Clean",
+      "Coil Temperature": "8°C",
+      "Fan Motor Current": "2.1 A",
+      "Humidity": "43%",
+      "Room Temperature": "22°C"
+    },
+    "notes": "No issues detected",
+    "workPerformed": "",
+    "duration": "19 minutes"
+  },
+  {
+    "id": 23,
+    "equipmentId": 3,
+    "equipmentName": "HVAC Unit B",
+    "serviceType": "weekly",
+    "date": "2024-09-30",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Air Flow Rate": "1205 CFM",
+      "Filter Status": "Fair",
+      "Coil Temperature": "7°C",
+      "Fan Motor Current": "2.0 A",
+      "Humidity": "41%",
+      "Room Temperature": "21°C"
+    },
+    "notes": "Minor filter dust, within tolerance",
+    "workPerformed": "",
+    "duration": "21 minutes"
+  },
+  {
+    "id": 24,
+    "equipmentId": 3,
+    "equipmentName": "HVAC Unit B",
+    "serviceType": "weekly",
+    "date": "2024-09-23",
+    "technician": "John Smith",
+    "readings": {
+      "Air Flow Rate": "1192 CFM",
+      "Filter Status": "Good",
+      "Coil Temperature": "8°C",
+      "Fan Motor Current": "2.1 A",
+      "Humidity": "42%",
+      "Room Temperature": "22°C"
+    },
+    "notes": "Stable operation continues",
+    "workPerformed": "",
+    "duration": "20 minutes"
+  },
+  {
+    "id": 25,
+    "equipmentId": 3,
+    "equipmentName": "HVAC Unit B",
+    "serviceType": "maintenance",
+    "date": "2024-09-16",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Air Flow Rate": "1215 CFM",
+      "Filter Status": "New",
+      "Coil Temperature": "7°C",
+      "Fan Motor Current": "1.9 A",
+      "Humidity": "40%",
+      "Room Temperature": "21°C"
+    },
+    "notes": "Quarterly maintenance completed successfully",
+    "workPerformed": "Complete system service: filter replacement, coil deep clean, belt check, motor lubrication",
+    "duration": "1.5 hours"
+  },
+  {
+    "id": 26,
+    "equipmentId": 4,
+    "equipmentName": "Boiler System C",
+    "serviceType": "weekly",
+    "date": "2024-11-06",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Water Temperature": "84°C",
+      "Pressure": "2.0 bar",
+      "Gas Flow": "1.1 m³/h",
+      "Flue Gas Temp": "178°C",
+      "CO₂ Level": "8.3%",
+      "Water Flow": "448 L/min"
+    },
+    "notes": "All parameters within optimal range",
+    "workPerformed": "",
+    "duration": "35 minutes"
+  },
+  {
+    "id": 27,
+    "equipmentId": 4,
+    "equipmentName": "Boiler System C",
+    "serviceType": "maintenance",
+    "date": "2024-10-30",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Water Temperature": "86°C",
+      "Pressure": "2.2 bar",
+      "Gas Flow": "1.3 m³/h",
+      "Flue Gas Temp": "182°C",
+      "CO₂ Level": "8.6%",
+      "Water Flow": "452 L/min"
+    },
+    "notes": "Burner cleaned and calibrated",
+    "workPerformed": "Burner cleaning, flame sensor calibration, heat exchanger inspection, safety valve test",
+    "duration": "2 hours"
+  },
+  {
+    "id": 28,
+    "equipmentId": 4,
+    "equipmentName": "Boiler System C",
+    "serviceType": "weekly",
+    "date": "2024-10-23",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Water Temperature": "85°C",
+      "Pressure": "2.1 bar",
+      "Gas Flow": "1.2 m³/h",
+      "Flue Gas Temp": "179°C",
+      "CO₂ Level": "8.4%",
+      "Water Flow": "449 L/min"
+    },
+    "notes": "Consistent performance",
+    "workPerformed": "",
+    "duration": "32 minutes"
+  },
+  {
+    "id": 29,
+    "equipmentId": 4,
+    "equipmentName": "Boiler System C",
+    "serviceType": "weekly",
+    "date": "2024-10-16",
+    "technician": "John Smith",
+    "readings": {
+      "Water Temperature": "83°C",
+      "Pressure": "2.0 bar",
+      "Gas Flow": "1.1 m³/h",
+      "Flue Gas Temp": "177°C",
+      "CO₂ Level": "8.2%",
+      "Water Flow": "451 L/min"
+    },
+    "notes": "Excellent efficiency ratings",
+    "workPerformed": "",
+    "duration": "38 minutes"
+  },
+  {
+    "id": 30,
+    "equipmentId": 4,
+    "equipmentName": "Boiler System C",
+    "serviceType": "maintenance",
+    "date": "2024-10-10",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Water Temperature": "85°C",
+      "Pressure": "2.1 bar",
+      "Gas Flow": "1.2 m³/h",
+      "Flue Gas Temp": "180°C",
+      "CO₂ Level": "8.5%",
+      "Water Flow": "450 L/min"
+    },
+    "notes": "Scheduled maintenance completed",
+    "workPerformed": "Annual inspection: pressure test, safety systems check, flue cleaning, controls calibration",
+    "duration": "3 hours"
+  },
+  {
+    "id": 31,
+    "equipmentId": 4,
+    "equipmentName": "Boiler System C",
+    "serviceType": "weekly",
+    "date": "2024-10-02",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Water Temperature": "84°C",
+      "Pressure": "2.0 bar",
+      "Gas Flow": "1.1 m³/h",
+      "Flue Gas Temp": "178°C",
+      "CO₂ Level": "8.3%",
+      "Water Flow": "448 L/min"
+    },
+    "notes": "Pre-maintenance check - all good",
+    "workPerformed": "",
+    "duration": "34 minutes"
+  },
+  {
+    "id": 32,
+    "equipmentId": 4,
+    "equipmentName": "Boiler System C",
+    "serviceType": "weekly",
+    "date": "2024-09-25",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Water Temperature": "85°C",
+      "Pressure": "2.1 bar",
+      "Gas Flow": "1.2 m³/h",
+      "Flue Gas Temp": "181°C",
+      "CO₂ Level": "8.4%",
+      "Water Flow": "449 L/min"
+    },
+    "notes": "Normal operation maintained",
+    "workPerformed": "",
+    "duration": "36 minutes"
+  },
+  {
+    "id": 33,
+    "equipmentId": 4,
+    "equipmentName": "Boiler System C",
+    "serviceType": "weekly",
+    "date": "2024-09-18",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Water Temperature": "86°C",
+      "Pressure": "2.2 bar",
+      "Gas Flow": "1.3 m³/h",
+      "Flue Gas Temp": "183°C",
+      "CO₂ Level": "8.7%",
+      "Water Flow": "453 L/min"
+    },
+    "notes": "Slightly higher readings, monitoring",
+    "workPerformed": "",
+    "duration": "42 minutes"
+  },
+  {
+    "id": 34,
+    "equipmentId": 5,
+    "equipmentName": "Pump Station D",
+    "serviceType": "weekly",
+    "date": "2024-11-05",
+    "technician": "John Smith",
+    "readings": {
+      "Flow Rate": "848 L/min",
+      "Pressure": "4.4 bar",
+      "Motor Current": "15.0 A",
+      "Bearing Temp": "44°C",
+      "Seal Condition": "Good",
+      "Vibration": "1.7 mm/s"
+    },
+    "notes": "Optimal pump performance",
+    "workPerformed": "",
+    "duration": "28 minutes"
+  },
+  {
+    "id": 35,
+    "equipmentId": 5,
+    "equipmentName": "Pump Station D",
+    "serviceType": "weekly",
+    "date": "2024-10-29",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Flow Rate": "852 L/min",
+      "Pressure": "4.5 bar",
+      "Motor Current": "15.1 A",
+      "Bearing Temp": "43°C",
+      "Seal Condition": "Good",
+      "Vibration": "1.6 mm/s"
+    },
+    "notes": "Excellent condition maintained",
+    "workPerformed": "",
+    "duration": "26 minutes"
+  },
+  {
+    "id": 36,
+    "equipmentId": 5,
+    "equipmentName": "Pump Station D",
+    "serviceType": "weekly",
+    "date": "2024-10-22",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Flow Rate": "846 L/min",
+      "Pressure": "4.3 bar",
+      "Motor Current": "15.3 A",
+      "Bearing Temp": "46°C",
+      "Seal Condition": "Good",
+      "Vibration": "1.9 mm/s"
+    },
+    "notes": "Minor bearing temperature increase",
+    "workPerformed": "",
+    "duration": "32 minutes"
+  },
+  {
+    "id": 37,
+    "equipmentId": 5,
+    "equipmentName": "Pump Station D",
+    "serviceType": "maintenance",
+    "date": "2024-10-15",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Flow Rate": "855 L/min",
+      "Pressure": "4.6 bar",
+      "Motor Current": "14.9 A",
+      "Bearing Temp": "42°C",
+      "Seal Condition": "Excellent",
+      "Vibration": "1.5 mm/s"
+    },
+    "notes": "Bearing lubrication completed",
+    "workPerformed": "Bearing lubrication, impeller inspection, seal replacement, alignment check",
+    "duration": "1.5 hours"
+  },
+  {
+    "id": 38,
+    "equipmentId": 5,
+    "equipmentName": "Pump Station D",
+    "serviceType": "weekly",
+    "date": "2024-10-08",
+    "technician": "John Smith",
+    "readings": {
+      "Flow Rate": "849 L/min",
+      "Pressure": "4.4 bar",
+      "Motor Current": "15.2 A",
+      "Bearing Temp": "45°C",
+      "Seal Condition": "Fair",
+      "Vibration": "1.8 mm/s"
+    },
+    "notes": "Seal showing minor wear",
+    "workPerformed": "",
+    "duration": "30 minutes"
+  },
+  {
+    "id": 39,
+    "equipmentId": 5,
+    "equipmentName": "Pump Station D",
+    "serviceType": "weekly",
+    "date": "2024-10-01",
+    "technician": "Sarah Wilson",
+    "readings": {
+      "Flow Rate": "851 L/min",
+      "Pressure": "4.5 bar",
+      "Motor Current": "15.1 A",
+      "Bearing Temp": "44°C",
+      "Seal Condition": "Good",
+      "Vibration": "1.7 mm/s"
+    },
+    "notes": "Stable operation continues",
+    "workPerformed": "",
+    "duration": "27 minutes"
+  },
+  {
+    "id": 40,
+    "equipmentId": 5,
+    "equipmentName": "Pump Station D",
+    "serviceType": "weekly",
+    "date": "2024-09-24",
+    "technician": "Mike Johnson",
+    "readings": {
+      "Flow Rate": "847 L/min",
+      "Pressure": "4.4 bar",
+      "Motor Current": "15.3 A",
+      "Bearing Temp": "46°C",
+      "Seal Condition": "Fair",
+      "Vibration": "1.9 mm/s"
+    },
+    "notes": "Monitoring seal condition closely",
+    "workPerformed": "",
+    "duration": "33 minutes"
+  },
+  {
+    "id": 41,
+    "equipmentId": 5,
+    "equipmentName": "Pump Station D",
+    "serviceType": "maintenance",
+    "date": "2024-09-17",
+    "technician": "Tom Anderson",
+    "readings": {
+      "Flow Rate": "853 L/min",
+      "Pressure": "4.5 bar",
+      "Motor Current": "15.0 A",
+      "Bearing Temp": "43°C",
+      "Seal Condition": "Good",
+      "Vibration": "1.6 mm/s"
+    },
+    "notes": "Quarterly maintenance completed",
+    "workPerformed": "Full service: impeller cleaning, bearing inspection, motor alignment, electrical connections check",
+    "duration": "2 hours"
+  }
+]
