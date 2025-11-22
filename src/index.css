@@ -1,18 +1,3 @@
-/* Fonts now loaded via <head> link for reliability; import kept as fallback */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  body {
-    @apply font-body bg-brand-bg text-brand-slate;
-  }
-  h1,h2,h3,h4,h5,h6 {
-    @apply font-brand text-brand-slateDark;
-  }
-  a { @apply text-brand-blue hover:text-brand-blueDark; }
-  ::selection { background: #046bd2; color: #ffffff; }
-}
-
-/* Old gradient demo removed in favor of brand styling */

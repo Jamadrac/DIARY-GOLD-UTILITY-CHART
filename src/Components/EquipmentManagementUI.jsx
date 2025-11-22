@@ -487,7 +487,7 @@ const EquipmentManagementUI = () => {
                       </button>
                       <button 
                         onClick={() => handleEdit(item)} 
-                        className="text-dairygreen-700 hover:text-dairygreen-900 px-2 py-1 text-sm"
+                        className="text-dairygreen-700 hover:text-white px-2 py-1 text-sm"
                       >
                         Edit
                       </button>

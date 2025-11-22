@@ -3,14 +3,16 @@ import { useUser } from '../context/UserContext';
 import machinesData from '../data/machines.json';
 import DailyLogs from './DailyLogs';
 import PerformanceGraphs from './PerformanceGraphs';
+import ServiceRecordingInterface from './ServiceRecordingInterface';
+import ServiceHistoryViewer from './ServiceHistoryViewer';
 
 const MachineRecording = ({ machineId }) => {
-  const { user, canRecordDailyLog } = useUser();
+  const { user, canRecordDailyLog, canRecordMaintenance } = useUser();
   const [machine, setMachine] = useState(null);
   const [recordingData, setRecordingData] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [recentRecordings, setRecentRecordings] = useState([]);
-  const [activeView, setActiveView] = useState('recording'); // 'recording', 'dailyLogs', 'performance'
+  const [activeView, setActiveView] = useState('menu'); // 'menu', 'recording', 'dailyLogs', 'performance', 'maintenance', 'history'
 
   useEffect(() => {
     // Find the machine
@@ -35,12 +37,93 @@ const MachineRecording = ({ machineId }) => {
     }
   }, [machineId]);
 
-  if (!canRecordDailyLog()) {
+  // Check if user has any permissions
+  const isTechnician = user?.role === 'technician' || user?.role === 'technical_manager' || user?.role === 'supervisor';
+  const isOperator = user?.role === 'operator';
+
+  // Role-based menu view - shown first when QR code is scanned
+  if (activeView === 'menu') {
     return (
       <div className="p-6 bg-gray-50 min-h-screen">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-            Access Denied: You don't have permission to record machine data.
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-brand-slateDark mb-2">
+                {machine?.name || 'Machine Recording'}
+              </h2>
+              <p className="text-brand-slate">
+                {machine?.location} • Serial: {machine?.serialNumber}
+              </p>
+            </div>
+
+            {/* Technician/Manager Menu */}
+            {isTechnician && (
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-brand-slateDark mb-4">What would you like to do?</h3>
+                
+                <button
+                  onClick={() => setActiveView('maintenance')}
+                  className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-4 rounded-lg font-semibold hover:shadow-lg transition-all"
+                >
+                  <div className="text-lg">📋 Record Maintenance</div>
+                  <div className="text-sm text-green-100 mt-1">Record service and maintenance activities</div>
+                </button>
+
+                <button
+                  onClick={() => setActiveView('history')}
+                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-4 rounded-lg font-semibold hover:shadow-lg transition-all"
+                >
+                  <div className="text-lg">📊 View Service History</div>
+                  <div className="text-sm text-purple-100 mt-1">Review past maintenance records</div>
+                </button>
+
+                <button
+                  onClick={() => setActiveView('performance')}
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-lg font-semibold hover:shadow-lg transition-all"
+                >
+                  <div className="text-lg">📈 View Performance</div>
+                  <div className="text-sm text-blue-100 mt-1">Analyze equipment performance metrics</div>
+                </button>
+              </div>
+            )}
+
+            {/* Operator Menu */}
+            {isOperator && (
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-brand-slateDark mb-4">What would you like to record?</h3>
+                
+                <button
+                  onClick={() => setActiveView('recording')}
+                  className="w-full bg-gradient-to-r from-brand-blue to-brand-blueDark text-white px-6 py-4 rounded-lg font-semibold hover:shadow-lg transition-all"
+                >
+                  <div className="text-lg">⚙️ Daily Machine Log</div>
+                  <div className="text-sm text-blue-100 mt-1">Record daily operational parameters</div>
+                </button>
+
+                <button
+                  onClick={() => setActiveView('dailyLogs')}
+                  className="w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white px-6 py-4 rounded-lg font-semibold hover:shadow-lg transition-all"
+                >
+                  <div className="text-lg">📅 Weekly Summary</div>
+                  <div className="text-sm text-amber-100 mt-1">Review and summarize weekly logs</div>
+                </button>
+              </div>
+            )}
+
+            {/* No permissions */}
+            {!isTechnician && !isOperator && (
+              <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg">
+                <p className="font-semibold">Access Denied</p>
+                <p>Your role does not have permission to record machine data.</p>
+              </div>
+            )}
+
+            <button
+              onClick={() => window.history.back()}
+              className="mt-6 w-full px-4 py-2 border border-brand-border text-brand-slate rounded-lg hover:bg-gray-50"
+            >
+              Back
+            </button>
           </div>
         </div>
       </div>
@@ -59,12 +142,95 @@ const MachineRecording = ({ machineId }) => {
     );
   }
 
+  // Render different views based on activeView
+  if (activeView === 'dailyLogs') {
+    return (
+      <div>
+        <div className="p-4 bg-white border-b flex items-center justify-between">
+          <h2 className="text-xl font-bold">{machine.name} - Daily Logs</h2>
+          <button
+            onClick={() => setActiveView('menu')}
+            className="px-4 py-2 text-brand-slate border border-brand-border rounded hover:bg-gray-50"
+          >
+            ← Back to Menu
+          </button>
+        </div>
+        <DailyLogs />
+      </div>
+    );
+  }
+
+  if (activeView === 'performance') {
+    return (
+      <div>
+        <div className="p-4 bg-white border-b flex items-center justify-between">
+          <h2 className="text-xl font-bold">{machine.name} - Performance Metrics</h2>
+          <button
+            onClick={() => setActiveView('menu')}
+            className="px-4 py-2 text-brand-slate border border-brand-border rounded hover:bg-gray-50"
+          >
+            ← Back to Menu
+          </button>
+        </div>
+        <PerformanceGraphs />
+      </div>
+    );
+  }
+
+  if (activeView === 'maintenance') {
+    return (
+      <div>
+        <div className="p-4 bg-white border-b flex items-center justify-between">
+          <h2 className="text-xl font-bold">{machine.name} - Maintenance Recording</h2>
+          <button
+            onClick={() => setActiveView('menu')}
+            className="px-4 py-2 text-brand-slate border border-brand-border rounded hover:bg-gray-50"
+          >
+            ← Back to Menu
+          </button>
+        </div>
+        <ServiceRecordingInterface machineId={machineId} onClose={() => setActiveView('menu')} />
+      </div>
+    );
+  }
+
+  if (activeView === 'history') {
+    return (
+      <div>
+        <div className="p-4 bg-white border-b flex items-center justify-between">
+          <h2 className="text-xl font-bold">{machine.name} - Service History</h2>
+          <button
+            onClick={() => setActiveView('menu')}
+            className="px-4 py-2 text-brand-slate border border-brand-border rounded hover:bg-gray-50"
+          >
+            ← Back to Menu
+          </button>
+        </div>
+        <ServiceHistoryViewer machineId={machineId} onClose={() => setActiveView('menu')} />
+      </div>
+    );
+  }
+
   const handleInputChange = (paramName, value) => {
     setRecordingData(prev => ({
       ...prev,
       [paramName]: value
     }));
   };
+
+  // Recording view for operators
+  if (activeView === 'recording') {
+    return (
+      <div>
+        <div className="p-4 bg-white border-b flex items-center justify-between">
+          <h2 className="text-xl font-bold">{machine.name} - Daily Machine Log</h2>
+          <button
+            onClick={() => setActiveView('menu')}
+            className="px-4 py-2 text-brand-slate border border-brand-border rounded hover:bg-gray-50"
+          >
+            ← Back to Menu
+          </button>
+        </div>
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -455,7 +621,13 @@ const MachineRecording = ({ machineId }) => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    );
+  }
+
+  // Default recording view return for operators
+  return (
+    <div></div>
   );
 };
 

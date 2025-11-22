@@ -100,10 +100,9 @@ const Navbar = ({ activeModule, setActiveModule }) => {
                 className="h-8 w-auto mr-3 drop-shadow-sm"
               />
               <div className="hidden sm:block">
-                <h1 className="py-2 text-lg font-semibold tracking-wide">
-                  Dairy Gold   
+                <h1 className="py-2 text-lg font-semibold tracking-wide text-white">
+                  Dairy Gold
                 </h1>
-                
               </div>
             </div>
           </div>

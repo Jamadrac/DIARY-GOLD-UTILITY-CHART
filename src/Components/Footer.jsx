@@ -13,7 +13,7 @@ const Footer = () => {
               className="h-10 w-auto mr-3 drop-shadow-sm"
             />
             <div>
-              <h3 className="text-lg font-brand font-semibold tracking-wide">Dairy Gold Zambia Limited</h3>
+              <h3 className="text-lg font-brand font-semibold tracking-wide text-white">Dairy Gold Zambia Limited</h3>
               <p className="text-sm text-brand-grayMuted">Makers of Ama Sip Sip Maheu</p>
             </div>
           </div>
@@ -44,7 +44,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-brand-border mt-6 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-brand-grayMuted">
           <div className="mb-2 md:mb-0">
-            <p>© 2025 Dairy Gold Zambia Limited. All rights reserved.</p>
+            <p>© 2025 . All rights reserved.</p>
           </div>
           <div className="flex items-center space-x-4">
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-brand-blue text-white text-xs font-semibold tracking-wide shadow-sm">

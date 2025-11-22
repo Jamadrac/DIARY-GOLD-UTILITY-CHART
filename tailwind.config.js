@@ -62,5 +62,29 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addBase, theme }) {
+      addBase({
+        body: {
+          fontFamily: theme('fontFamily.body'),
+          backgroundColor: theme('colors.brand.bg'),
+          color: theme('colors.brand.slate'),
+        },
+        'h1, h2, h3, h4, h5, h6': {
+          fontFamily: theme('fontFamily.brand'),
+          color: theme('colors.brand.slateDark'),
+        },
+        a: {
+          color: theme('colors.brand.blue'),
+          '&:hover': {
+            color: theme('colors.brand.blueDark'),
+          },
+        },
+        '::selection': {
+          backgroundColor: '#046bd2',
+          color: '#ffffff',
+        },
+      });
+    },
+  ],
 };
