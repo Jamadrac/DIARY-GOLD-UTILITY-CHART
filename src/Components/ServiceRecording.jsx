@@ -1,7 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { FaClipboardCheck, FaTools, FaSave, FaTimes } from 'react-icons/fa';
+import { useUser } from '../context/UserContext';
 
 const ServiceRecording = ({ equipmentId }) => {
+  const { user, canRecordMaintenance } = useUser();
+
+  // Check permissions - only technicians can record maintenance
+  if (!canRecordMaintenance()) {
+    return (
+      <div className="p-6 bg-gray-50 min-h-screen">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+            <h3 className="font-bold">Access Denied</h3>
+            <p>Only technicians can record maintenance activities. Your role: {user?.role}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // Sample equipment with their configured parameters
   const [equipment] = useState([
     { 

@@ -1,35 +1,33 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Login from './Components/Login'
 import Dashboard from './Components/Dashboard'
+import TestAccountsInfo from './Components/TestAccountsInfo'
+import { UserProvider, useUser } from './context/UserContext'
 
-const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(null);
+const AppContent = () => {
+  const { isAuthenticated, login } = useUser();
 
   const handleLogin = (userData) => {
-    // In a real app, you would validate credentials here
-    setUser({
-      name: userData.name || 'Admin',
-      email: userData.email,
-      role: userData.role || 'Administrator',
-      facilityName: userData.facilityName || 'Main Facility'
-    });
-    setIsLoggedIn(true);
+    login(userData);
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setUser(null);
-  };
-
-  if (isLoggedIn) {
-    return <Dashboard user={user} onLogout={handleLogout} />;
+  if (isAuthenticated) {
+    return <Dashboard />;
   }
 
   return (
-    <div className='grid w-[100%] h-screen place-items-center bg-cyan-400'>
+    <div className='grid w-[100%] h-screen place-items-center bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100 relative'>
       <Login onLogin={handleLogin} />
+      <TestAccountsInfo />
     </div>
+  )
+}
+
+const App = () => {
+  return (
+    <UserProvider>
+      <AppContent />
+    </UserProvider>
   )
 }
 

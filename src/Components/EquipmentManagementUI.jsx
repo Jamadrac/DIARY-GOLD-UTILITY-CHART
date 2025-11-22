@@ -3,8 +3,26 @@ import { FaPlus, FaEdit, FaTrash, FaQrcode, FaPrint, FaExternalLinkAlt, FaCog, F
 import machinesData from '../data/machines.json';
 import ServiceRecordingInterface from './ServiceRecordingInterface';
 import ServiceHistoryViewer from './ServiceHistoryViewer';
+import { useUser } from '../context/UserContext';
 
 const EquipmentManagementUI = () => {
+  const { user, canAddMachine, canDeleteMachine, getRoleDisplayName } = useUser();
+
+  // Check permissions - only Technical Managers and Supervisors can manage machines
+  if (!canAddMachine()) {
+    return (
+      <div className="p-6 bg-gray-50 min-h-screen">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded">
+            <h3 className="font-bold">Limited Access</h3>
+            <p>Equipment management is restricted to Technical Managers and Supervisors.</p>
+            <p>Your current role: {getRoleDisplayName(user?.role)}</p>
+            <p className="mt-2">You can view equipment details in the Equipment Overview section.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
   const [equipment, setEquipment] = useState(machinesData);
 
   const [isAdding, setIsAdding] = useState(false);
@@ -114,6 +132,11 @@ const EquipmentManagementUI = () => {
   };
 
   const handleDelete = (id) => { 
+    if (!canDeleteMachine()) {
+      alert('You do not have permission to delete equipment. Only Technical Managers and Supervisors can delete equipment.');
+      return;
+    }
+    
     if (window.confirm('Are you sure you want to delete this equipment? This action cannot be undone.')) {
       setEquipment(equipment.filter(e => e.id !== id)); 
     }
@@ -467,12 +490,14 @@ const EquipmentManagementUI = () => {
                       >
                         Edit
                       </button>
-                      <button 
-                        onClick={() => handleDelete(item.id)} 
-                        className="text-red-600 hover:text-red-800 px-2 py-1 text-sm"
-                      >
-                        Delete
-                      </button>
+                      {canDeleteMachine() && (
+                        <button 
+                          onClick={() => handleDelete(item.id)} 
+                          className="text-red-600 hover:text-red-800 px-2 py-1 text-sm"
+                        >
+                          Delete
+                        </button>
+                      )}
                       <button 
                         onClick={() => showQr(item)} 
                         className="text-gray-700 hover:text-gray-900 px-2 py-1 text-sm inline-flex items-center"
