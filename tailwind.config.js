@@ -4,6 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Dairy Gold brand palette extracted from live site
+        brand: {
+          blue: '#046bd2', // primary action / links
+          blueDark: '#045cb4', // hover / darker accent
+          nav: '#003a63', // header / footer background
+          slateDark: '#1e293b', // headings
+          slate: '#334155', // body text
+          bg: '#f9fafb', // light background
+          white: '#ffffff',
+          border: '#e2e8f0',
+          gray: '#cbd5e1',
+          grayMuted: '#94a3b8'
+        },
         'dairy': {
           50: '#f8fafc',
           100: '#f1f5f9',
@@ -42,7 +55,10 @@ export default {
         }
       },
       fontFamily: {
-        'dairy': ['Inter', 'system-ui', 'sans-serif'],
+        dairy: ['Inter', 'system-ui', 'sans-serif'],
+        brand: ['Montserrat', 'sans-serif'],
+        body: ['Roboto', 'system-ui', 'sans-serif'],
+        slab: ['"Roboto Slab"', 'serif']
       }
     },
   },

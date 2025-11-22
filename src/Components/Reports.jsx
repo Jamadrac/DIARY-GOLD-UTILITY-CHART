@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Reports = () => {
+const Reports = ({ embedded = false }) => {
   const [selectedReport, setSelectedReport] = useState('overview');
   const [dateRange, setDateRange] = useState('30days');
 
@@ -468,6 +468,22 @@ const Reports = () => {
         return renderOverviewReport();
     }
   };
+
+  if (embedded) {
+    return (
+      <div className="mt-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-semibold">Reports Snapshot</h2>
+              <span className="text-sm text-gray-500">Generated {new Date().toLocaleDateString()}</span>
+            </div>
+            {renderOverviewReport()}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6">

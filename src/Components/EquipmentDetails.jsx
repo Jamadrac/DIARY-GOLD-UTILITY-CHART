@@ -34,12 +34,12 @@ const EquipmentDetails = ({ equipmentId }) => {
 
   const getTypeIcon = (type) => {
     switch (type) {
-      case 'chiller': return <FaTemperatureHigh className="text-3xl text-blue-500" />;
+      case 'chiller': return <FaTemperatureHigh className="text-3xl text-dairygreen-600" />;
       case 'compressor': return <FaTachometerAlt className="text-3xl text-cyan-500" />;
       case 'genset': return <FaBolt className="text-3xl text-yellow-500" />;
       case 'hvac': return <FaWrench className="text-3xl text-green-500" />;
       case 'motor': return <FaCog className="text-3xl text-purple-500" />;
-      case 'pump': return <FaTint className="text-3xl text-blue-600" />;
+      case 'pump': return <FaTint className="text-3xl text-dairygreen-700" />;
       default: return <FaWrench className="text-3xl text-gray-500" />;
     }
   };
@@ -105,7 +105,7 @@ const EquipmentDetails = ({ equipmentId }) => {
         {selectedEquipment.parameters && (
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
             <h2 className="text-xl font-semibold mb-4 flex items-center">
-              <FaChartLine className="mr-2 text-blue-500" />
+              <FaChartLine className="mr-2 text-dairygold-400" />
               Current Parameters
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -186,7 +186,7 @@ const EquipmentDetails = ({ equipmentId }) => {
                     <div className="flex justify-between items-start mb-1">
                       <span className="text-sm font-medium text-gray-900">{new Date(record.date).toLocaleDateString()}</span>
                       <span className={`px-2 py-1 text-xs rounded-full ${
-                        record.serviceType === 'maintenance' ? 'bg-blue-100 text-blue-800' :
+                        record.serviceType === 'maintenance' ? 'bg-dairygold-100 text-dairygreen-800' :
                         record.serviceType === 'repair' ? 'bg-red-100 text-red-800' :
                         'bg-gray-100 text-gray-800'
                       }`}>
@@ -232,7 +232,7 @@ const EquipmentDetails = ({ equipmentId }) => {
         <div className="bg-white rounded-lg shadow-md p-6 mt-6">
           <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <button className="bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2">
+            <button className="bg-dairygreen-600 text-white py-3 px-4 rounded-lg hover:bg-dairygreen-700 transition-colors flex items-center justify-center space-x-2">
               <FaWrench />
               <span>Schedule Maintenance</span>
             </button>

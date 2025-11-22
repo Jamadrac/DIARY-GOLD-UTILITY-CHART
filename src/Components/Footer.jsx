@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-800 via-gray-900 to-blue-900 text-white py-6 mt-8">
+    <footer className="bg-brand-nav text-white py-8 mt-16 font-body">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Dairy Gold Branding */}
@@ -10,11 +10,11 @@ const Footer = () => {
             <img 
               src="/dairy-gold-logo.png" 
               alt="Dairy Gold Logo" 
-              className="h-8 w-auto mr-3 filter brightness-0 invert"
+              className="h-10 w-auto mr-3 drop-shadow-sm"
             />
             <div>
-              <h3 className="text-lg font-bold">Dairy Gold Zambia Limited</h3>
-              <p className="text-sm text-gray-300">Makers of Ama Sip Sip Maheu</p>
+              <h3 className="text-lg font-brand font-semibold tracking-wide">Dairy Gold Zambia Limited</h3>
+              <p className="text-sm text-brand-grayMuted">Makers of Ama Sip Sip Maheu</p>
             </div>
           </div>
 
@@ -35,19 +35,19 @@ const Footer = () => {
                 <span>Zambia</span>
               </div>
             </div>
-            <div className="mt-2 text-xs text-gray-400">
+            <div className="mt-2 text-xs text-brand-grayMuted">
               Tradekings Group | Equipment Management System
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-700 mt-4 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+        <div className="border-t border-brand-border mt-6 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-brand-grayMuted">
           <div className="mb-2 md:mb-0">
             <p>© 2025 Dairy Gold Zambia Limited. All rights reserved.</p>
           </div>
           <div className="flex items-center space-x-4">
-            <span className="inline-flex items-center px-2 py-1 rounded-full bg-blue-600 text-white text-xs font-medium">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-brand-blue text-white text-xs font-semibold tracking-wide shadow-sm">
               EAT WELL. DRINK WELL. FEEL GOOD.
             </span>
           </div>

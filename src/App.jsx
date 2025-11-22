@@ -16,7 +16,7 @@ const AppContent = () => {
   }
 
   return (
-    <div className='grid w-[100%] h-screen place-items-center bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100 relative'>
+    <div className='grid w-[100%] h-screen place-items-center bg-gradient-to-br from-gray-50 via-dairygold-50 to-gray-100 relative'>
       <Login onLogin={handleLogin} />
       <TestAccountsInfo />
     </div>

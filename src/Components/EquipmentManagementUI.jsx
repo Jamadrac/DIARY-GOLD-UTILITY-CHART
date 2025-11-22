@@ -244,7 +244,8 @@ const EquipmentManagementUI = () => {
   const showQr = (item) => { setQrTarget(item); setQrModalOpen(true); };
   const closeQr = () => { setQrModalOpen(false); setQrTarget(null); };
   const printQr = (item) => {
-    const url = `${window.location.origin}/machines/${item.id}`;
+    // Updated to point to recording route instead of machines detail
+    const url = `${window.location.origin}/record/${item.id}`;
     const img = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}`;
     const w = window.open('','_blank'); if(!w) return alert('Allow popups to print'); w.document.write(`<html><body style="display:flex;flex-direction:column;align-items:center"><h2>${item.name}</h2><img src="${img}"/><script>setTimeout(()=>window.print(),300)</script></body></html>`); w.document.close();
   };
@@ -284,7 +285,7 @@ const EquipmentManagementUI = () => {
           <div className="space-x-2">
             <button 
               onClick={handleAdd} 
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 inline-flex items-center"
+              className="bg-dairygreen-600 text-white px-4 py-2 rounded hover:bg-dairygreen-700 inline-flex items-center"
             >
               <FaPlus className="mr-2" />
               Add Equipment
@@ -308,7 +309,7 @@ const EquipmentManagementUI = () => {
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-dairygreen-600"
                   placeholder="Enter equipment name"
                 />
               </div>
@@ -320,7 +321,7 @@ const EquipmentManagementUI = () => {
                 <select
                   value={formData.type}
                   onChange={(e) => handleTypeChange(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-dairygreen-600"
                 >
                   <option value="chiller">Industrial Chiller</option>
                   <option value="compressor">Air Compressor</option>
@@ -341,7 +342,7 @@ const EquipmentManagementUI = () => {
                   type="text"
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-dairygreen-600"
                   placeholder="Enter location"
                 />
               </div>
@@ -379,7 +380,7 @@ const EquipmentManagementUI = () => {
                   {parameterTemplates[formData.type] && (
                     <button
                       onClick={() => setParameterDefinitions(parameterTemplates[formData.type])}
-                      className="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700"
+                      className="bg-dairygreen-600 text-white px-3 py-1 rounded text-sm hover:bg-dairygreen-700"
                     >
                       Load Template
                     </button>
@@ -388,8 +389,8 @@ const EquipmentManagementUI = () => {
               </div>
 
               {parameterTemplates[formData.type] && parameterDefinitions.length === 0 && (
-                <div className="bg-blue-50 border border-blue-200 rounded p-3 mb-4">
-                  <p className="text-sm text-blue-800">
+                <div className="bg-dairygold-50 border border-dairygold-200 rounded p-3 mb-4">
+                  <p className="text-sm text-dairygold-700">
                     💡 <strong>Tip:</strong> We have a pre-defined template for {formData.type} equipment with {parameterTemplates[formData.type].length} common parameters. 
                     Click "Load Template" to use it as a starting point, then customize as needed.
                   </p>
@@ -410,7 +411,7 @@ const EquipmentManagementUI = () => {
                           <div className="text-xs text-gray-500 mt-1">{param.description}</div>
                         )}
                         {param.options && param.options.length > 0 && (
-                          <div className="text-xs text-blue-600 mt-1">
+                          <div className="text-xs text-dairygreen-700 mt-1">
                             Options: {param.options.join(', ')}
                           </div>
                         )}
@@ -464,7 +465,7 @@ const EquipmentManagementUI = () => {
                   <td className="px-4 py-3">{item.location}</td>
                   <td className="px-4 py-3 font-mono text-sm">{item.serialNumber}</td>
                   <td className="px-4 py-3">
-                    <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
+                    <span className="bg-dairygold-100 text-dairygreen-800 px-2 py-1 rounded text-xs">
                       {(item.parameterDefinitions?.length || item.parameters?.length || 0)} params
                     </span>
                   </td>
@@ -486,7 +487,7 @@ const EquipmentManagementUI = () => {
                       </button>
                       <button 
                         onClick={() => handleEdit(item)} 
-                        className="text-blue-600 hover:text-blue-800 px-2 py-1 text-sm"
+                        className="text-dairygreen-700 hover:text-dairygreen-900 px-2 py-1 text-sm"
                       >
                         Edit
                       </button>
@@ -506,18 +507,19 @@ const EquipmentManagementUI = () => {
                       </button>
                       <button 
                         onClick={() => printQr(item)} 
-                        className="text-gray-700 hover:text-gray-900 px-2 py-1 text-sm inline-flex items-center"
+                        className="text-gray-700 hover:text-gray-900 px-2 py-1 text-sm inline-flex items-center bg-transparent"
                       >
                         <FaPrint className="mr-1" />Print
                       </button>
                       <button 
                         onClick={() => { 
-                          window.history.pushState({}, '', `/machines/${item.id}`); 
+                          // Navigate to recording route
+                          window.history.pushState({}, '', `/record/${item.id}`); 
                           window.location.reload(); 
                         }} 
                         className="text-gray-700 hover:text-gray-900 px-2 py-1 text-sm inline-flex items-center"
                       >
-                        <FaExternalLinkAlt className="mr-1" />Open
+                        <FaExternalLinkAlt className="mr-1" />Record
                       </button>
                     </div>
                   </td>
@@ -724,10 +726,10 @@ const EquipmentManagementUI = () => {
                 <button onClick={closeQr} className="text-gray-500">✕</button>
               </div>
               <div className="flex flex-col items-center">
-                <img src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(window.location.origin + '/machines/' + qrTarget.id)}`} alt="QR" />
+                <img src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(window.location.origin + '/record/' + qrTarget.id)}`} alt="QR" />
                 <div className="mt-4 flex space-x-2">
-                  <button onClick={()=>printQr(qrTarget)} className="px-3 py-1 bg-blue-600 text-white rounded">Print</button>
-                  <button onClick={()=>{ navigator.clipboard && navigator.clipboard.writeText(window.location.origin + '/machines/' + qrTarget.id); }} className="px-3 py-1 bg-gray-100 rounded">Copy Link</button>
+                  <button onClick={()=>printQr(qrTarget)} className="px-3 py-1 bg-dairygreen-600 text-white rounded">Print</button>
+                  <button onClick={()=>{ navigator.clipboard && navigator.clipboard.writeText(window.location.origin + '/record/' + qrTarget.id); }} className="px-3 py-1 bg-gray-100 rounded">Copy Link</button>
                 </div>
               </div>
             </div>

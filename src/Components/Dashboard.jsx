@@ -79,22 +79,30 @@ const Dashboard = () => {
         return <MachineSelection />;
       case 'machine-recording':
         return <MachineRecording machineId={recordingMachineId} />;
-      case 'reports':
-        return <Reports />;
+      // 'reports' removed as standalone; snapshot now embedded in overview
       default:
-        return <EquipmentOverview />;
+        return <>
+         <Reports embedded />
+          <EquipmentOverview />
+         
+        </>;
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-bg font-body">
       <Navbar 
         activeModule={activeModule} 
         setActiveModule={setActiveModule}
       />
       <main className="pt-16 pb-8 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          {renderContent()}
+          {activeModule === 'overview' ? (
+            <>  <Reports embedded />
+              <EquipmentOverview />
+            
+            </>
+          ) : renderContent()}
         </div>
       </main>
       <Footer />

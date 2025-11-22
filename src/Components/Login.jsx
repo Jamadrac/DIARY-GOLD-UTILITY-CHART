@@ -86,8 +86,8 @@ function LoginForm({ onLogin }) {
               className="h-16 w-auto"
             />
           </div>
-          <h1 className="text-2xl font-bold text-gray-800">Dairy Gold Zambia Limited</h1>
-          <p className="text-sm text-gray-600 font-medium">Equipment Management System</p>
+          <h1 className="text-2xl font-bold text-dairygreen-900">Dairy Gold Zambia Limited</h1>
+          <p className="text-sm text-dairygold-100 font-medium">Equipment Management System</p>
         </div>
         <h2 className="text-2xl font-semibold text-gray-800">
           {isLoginMode ? "Login" : "Sign Up"}
@@ -117,8 +117,8 @@ function LoginForm({ onLogin }) {
         >
           Signup
         </button>
-        <div
-          className={`absolute top-0 h-full w-1/2 rounded-md bg-gradient-to-r from-blue-600 to-blue-700 transition-all shadow-sm ${
+          <div
+          className={`absolute top-0 h-full w-1/2 rounded-md bg-gradient-to-r from-dairygreen-600 to-dairygreen-800 transition-all shadow-sm ${
             isLoginMode ? "left-0" : "left-1/2"
           }`}
         ></div>
@@ -135,7 +135,7 @@ function LoginForm({ onLogin }) {
             onChange={handleInputChange}
             placeholder="Name"
             required={!isLoginMode}
-            className="w-full p-3 border-b-2 border-gray-200 outline-none focus:border-blue-500 placeholder-gray-400 bg-transparent"
+            className="w-full p-3 border-b-2 border-gray-200 outline-none focus:border-dairygreen-600 placeholder-gray-400 bg-transparent"
           />
         )}
 
@@ -146,7 +146,7 @@ function LoginForm({ onLogin }) {
             value={formData.role}
             onChange={handleInputChange}
             required
-            className="w-full p-3 border-b-2 border-gray-200 outline-none focus:border-blue-500 bg-transparent text-gray-700"
+            className="w-full p-3 border-b-2 border-gray-200 outline-none focus:border-dairygreen-600 bg-transparent text-gray-700"
           >
             <option value={USER_ROLES.TECHNICAL_MANAGER}>Technical Manager</option>
             <option value={USER_ROLES.SUPERVISOR}>Supervisor</option>
@@ -184,7 +184,7 @@ function LoginForm({ onLogin }) {
             onChange={handleInputChange}
             placeholder="Confirm Password"
             required={!isLoginMode}
-            className="w-full p-3 border-b-2 border-gray-200 outline-none focus:border-blue-500 placeholder-gray-400 bg-transparent"
+            className="w-full p-3 border-b-2 border-gray-200 outline-none focus:border-dairygreen-600 placeholder-gray-400 bg-transparent"
           />
         )}
 
@@ -198,7 +198,7 @@ function LoginForm({ onLogin }) {
         {/* Forgot Password (Only for Login) */}
         {isLoginMode && (
           <div className="text-right">
-            <a href="#" className="text-blue-600 hover:text-blue-800 hover:underline transition-colors">
+            <a href="#" className="text-dairygreen-700 hover:text-dairygreen-900 hover:underline transition-colors">
               Forgot password?
             </a>
           </div>
@@ -207,7 +207,7 @@ function LoginForm({ onLogin }) {
         {/* Submit Button */}
         <button 
           type="submit"
-          className="w-full p-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg text-lg font-medium hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-[1.01]"
+          className="w-full p-3 bg-gradient-to-r from-dairygreen-600 to-dairygreen-800 text-white rounded-lg text-lg font-medium hover:from-dairygreen-700 hover:to-dairygreen-900 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-[1.01]"
         >
           {isLoginMode ? "Login" : "Signup"}
         </button>
@@ -221,7 +221,7 @@ function LoginForm({ onLogin }) {
               e.preventDefault();
               setIsLoginMode(!isLoginMode);
             }}
-            className="text-blue-600 hover:text-blue-800 hover:underline transition-colors font-medium"
+            className="text-dairygreen-700 hover:text-dairygreen-900 hover:underline transition-colors font-medium"
           >
             {isLoginMode ? "Signup now" : "Login"}
           </a>
