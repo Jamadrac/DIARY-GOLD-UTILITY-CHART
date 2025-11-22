@@ -3,6 +3,7 @@ import Login from './Components/Login'
 import Dashboard from './Components/Dashboard'
 import TestAccountsInfo from './Components/TestAccountsInfo'
 import { UserProvider, useUser } from './context/UserContext'
+import { BrowserRouter } from 'react-router-dom'
 
 const AppContent = () => {
   const { isAuthenticated, login } = useUser();
@@ -26,7 +27,9 @@ const AppContent = () => {
 const App = () => {
   return (
     <UserProvider>
-      <AppContent />
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
     </UserProvider>
   )
 }
