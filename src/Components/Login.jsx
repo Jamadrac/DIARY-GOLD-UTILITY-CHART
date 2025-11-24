@@ -38,13 +38,8 @@ function LoginForm({ onLogin }) {
         return;
       }
       
-      // For demo purposes, simulate successful signup
-      onLogin({
-        name: formData.name || 'User',
-        email: formData.email,
-        role: formData.role,
-        farmName: 'Smart Farm'
-      });
+      // Signup is demo only - show message
+      setLoginError('Signup is for demo only. Please use test accounts below to login.');
       return;
     }
 
@@ -212,6 +207,15 @@ function LoginForm({ onLogin }) {
           {isLoginMode ? "Login" : "Sign Up"}
         </button>
 
+        {/* Demo Notice for Signup */}
+        {!isLoginMode && (
+          <div className="bg-blue-50 border border-blue-200 rounded-md p-3 mt-4">
+            <p className="text-xs text-blue-800">
+              <strong>Note:</strong> Signup is for demonstration only. Use test accounts to login.
+            </p>
+          </div>
+        )}
+
         {/* Switch Mode Link */}
         <p className="text-center text-sm text-brand-slate mt-4">
           {isLoginMode ? "Don't have an account?" : "Already have an account?"}{" "}
@@ -220,6 +224,7 @@ function LoginForm({ onLogin }) {
             onClick={(e) => {
               e.preventDefault();
               setIsLoginMode(!isLoginMode);
+              setLoginError(''); // Clear errors when switching
             }}
             className="text-brand-blue hover:text-brand-blueDark transition-colors font-semibold"
           >
