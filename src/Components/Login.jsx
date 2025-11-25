@@ -103,7 +103,7 @@ function LoginForm({ onLogin }) {
         >
           Login
         </button>
-        <button
+        {/* <button
           type="button"
           className={`w-1/2 text-sm font-semibold transition-all z-10 ${
             !isLoginMode ? "text-white" : "text-brand-slate"
@@ -111,7 +111,7 @@ function LoginForm({ onLogin }) {
           onClick={() => setIsLoginMode(false)}
         >
           Signup
-        </button>
+        </button> */}
         <div
           className={`absolute top-0 h-full w-1/2 bg-gradient-to-r from-brand-blue to-brand-blueDark transition-all shadow-sm rounded-md ${
             isLoginMode ? "left-0" : "left-1/2"
@@ -228,7 +228,7 @@ function LoginForm({ onLogin }) {
             }}
             className="text-brand-blue hover:text-brand-blueDark transition-colors font-semibold"
           >
-            {isLoginMode ? "Sign up" : "Log in"}
+            {isLoginMode ? "fred" : "Log in"}
           </a>
         </p>
       </form>
