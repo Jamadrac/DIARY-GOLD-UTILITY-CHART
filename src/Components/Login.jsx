@@ -204,7 +204,7 @@ function LoginForm({ onLogin }) {
           type="submit"
           className="w-full mt-6 p-3 bg-gradient-to-r from-brand-blue to-brand-blueDark text-white rounded-lg font-semibold hover:from-brand-blueDark hover:to-brand-blue transition-all duration-200 shadow-md hover:shadow-lg"
         >
-          {isLoginMode ? "Login" : "Sign Up"}
+          {isLoginMode ? "Login" : ""}
         </button>
 
         {/* Demo Notice for Signup */}
@@ -224,11 +224,11 @@ function LoginForm({ onLogin }) {
             onClick={(e) => {
               e.preventDefault();
               setIsLoginMode(!isLoginMode);
-              setLoginError(''); // Clear errors when switching
+              setLoginError('');
             }}
             className="text-brand-blue hover:text-brand-blueDark transition-colors font-semibold"
           >
-            {isLoginMode ? "fred" : "Log in"}
+            {isLoginMode ? "signup" : "Log in"}
           </a>
         </p>
       </form>
